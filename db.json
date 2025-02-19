@@ -1,0 +1,184 @@
+{
+    "medicamentos": [
+      {
+        "nombre": "Trastuzumab",
+        "lote": "TZ202401",
+        "fecha_vencimiento": "2026-09-15",
+        "concentracion": "150 mg/7.2 mL",
+        "forma_farmaceutica": "Solución inyectable",
+        "precio": "250.00 USD",
+        "imagen": "/img/trastuzumab.png"
+      },
+      {
+        "nombre": "Pertuzumab",
+        "lote": "PZ202402",
+        "fecha_vencimiento": "2027-04-20",
+        "concentracion": "420 mg/14 mL",
+        "forma_farmaceutica": "Solución inyectable",
+        "precio": "320.50 USD",
+        "imagen": "/img/pertuzumab.png"
+      },
+      {
+        "nombre": "Paclitaxel",
+        "lote": "PT202403",
+        "fecha_vencimiento": "2025-12-10",
+        "concentracion": "100 mg/16.7 mL",
+        "forma_farmaceutica": "Solución inyectable",
+        "precio": "180.75 USD",
+        "imagen": "/img/paclitaxel.png"
+      },
+      {
+        "nombre": "Docetaxel",
+        "lote": "DT202404",
+        "fecha_vencimiento": "2026-06-05",
+        "concentracion": "80 mg/4 mL",
+        "forma_farmaceutica": "Solución inyectable",
+        "precio": "210.90 USD",
+        "imagen": "/img/docetaxel.png"
+      },
+      {
+        "nombre": "Doxorrubicina liposomal",
+        "lote": "DL202405",
+        "fecha_vencimiento": "2027-02-18",
+        "concentracion": "50 mg/25 mL",
+        "forma_farmaceutica": "Solución inyectable",
+        "precio": "275.00 USD",
+        "imagen": "/img/doxorrubicina.png"
+      },
+      {
+        "nombre": "Capecitabina",
+        "lote": "CP202406",
+        "fecha_vencimiento": "2025-10-30",
+        "concentracion": "500 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "145.30 USD",
+        "imagen": "/img/capecitabina.png"
+      },
+      {
+        "nombre": "Tamoxifeno",
+        "lote": "TX202407",
+        "fecha_vencimiento": "2026-08-12",
+        "concentracion": "20 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "95.60 USD",
+        "imagen": "/img/tamoxifeno.png"
+      },
+      {
+        "nombre": "Letrozol",
+        "lote": "LZ202408",
+        "fecha_vencimiento": "2027-03-05",
+        "concentracion": "2.5 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "105.45 USD",
+        "imagen": "/img/letrozol.png"
+      },
+      {
+        "nombre": "Anastrozol",
+        "lote": "AZ202409",
+        "fecha_vencimiento": "2026-12-22",
+        "concentracion": "1 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "115.75 USD",
+        "imagen": "/img/anastrozol.png"
+      },
+      {
+        "nombre": "Fulvestrant",
+        "lote": "FV202410",
+        "fecha_vencimiento": "2025-11-17",
+        "concentracion": "250 mg/5 mL",
+        "forma_farmaceutica": "Solución inyectable",
+        "precio": "290.20 USD",
+        "imagen": "/img/fulvestrant.png"
+      },
+      {
+        "nombre": "Palbociclib",
+        "lote": "PB202411",
+        "fecha_vencimiento": "2026-04-08",
+        "concentracion": "125 mg",
+        "forma_farmaceutica": "Cápsula dura",
+        "precio": "355.80 USD",
+        "imagen": "/img/palbociclib.png"
+      },
+      {
+        "nombre": "Ribociclib",
+        "lote": "RB202412",
+        "fecha_vencimiento": "2027-01-25",
+        "concentracion": "200 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "340.00 USD",
+        "imagen": "/img/ribociclib.png"
+      },
+      {
+        "nombre": "Abemaciclib",
+        "lote": "AB202413",
+        "fecha_vencimiento": "2025-09-13",
+        "concentracion": "150 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "310.50 USD",
+        "imagen": "/img/abemaciclib.png"
+      },
+      {
+        "nombre": "Everolimus",
+        "lote": "EV202414",
+        "fecha_vencimiento": "2026-07-29",
+        "concentracion": "10 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "195.60 USD",
+        "imagen": "/img/everolimus.png"
+      },
+      {
+        "nombre": "Olaparib",
+        "lote": "OL202415",
+        "fecha_vencimiento": "2027-06-14",
+        "concentracion": "300 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "280.90 USD",
+        "imagen": "/img/olaparib.png"
+      },
+      {
+        "nombre": "Talazoparib",
+        "lote": "TZ202416",
+        "fecha_vencimiento": "2026-09-01",
+        "concentracion": "1 mg",
+        "forma_farmaceutica": "Cápsula dura",
+        "precio": "330.00 USD",
+        "imagen": "/img/talazoparib.png"
+      },
+      {
+        "nombre": "Sacituzumab govitecán",
+        "lote": "SG202417",
+        "fecha_vencimiento": "2025-08-07",
+        "concentracion": "180 mg/vial",
+        "forma_farmaceutica": "Polvo para solución inyectable",
+        "precio": "400.50 USD",
+        "imagen": "/img/sacituzumab.png"
+      },
+      {
+        "nombre": "Lapatinib",
+        "lote": "LP202418",
+        "fecha_vencimiento": "2026-11-19",
+        "concentracion": "250 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "275.20 USD",
+        "imagen": "/img/lapatinib.png"
+      },
+      {
+        "nombre": "Neratinib",
+        "lote": "NR202419",
+        "fecha_vencimiento": "2027-05-10",
+        "concentracion": "40 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "290.75 USD",
+        "imagen": "/img/neratinib.png"
+      },
+      {
+        "nombre": "Tucatinib",
+        "lote": "TC202420",
+        "fecha_vencimiento": "2025-12-01",
+        "concentracion": "150 mg",
+        "forma_farmaceutica": "Tableta recubierta",
+        "precio": "315.80 USD",
+        "imagen": "/img/tucatinib.png"
+      }
+    ]
+  }

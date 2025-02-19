@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/img/favicon.png" type="favicon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 min-h-screen flex flex-col items-center">
+    <!-- Navbar fijo -->
+    <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10">
+
+    </nav>
+
+    <!-- Carrusel -->
+    <div class="w-full max-w-7xl mx-auto mt-20 relative overflow-hidden">
+        <div class="relative w-full overflow-hidden">
+            <div class="flex transition-transform duration-500 ease-in-out" id="carrusel"></div>
+            <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full">❮</button>
+            <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full">❯</button>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="w-full max-w-7xl px-6 py-24">
+        <!-- Sección canje -->
+        <section id="canje" class="mb-12">
+            <h2 class="text-2xl font-semibold text-purple-700 mb-4">canje</h2>
+            <p class="text-gray-600">Intercambio de medicamentos oncológicos para garantizar acceso equitativo.</p>
+        </section>
+
+        <!-- Sección Donaciones -->
+        <section id="donaciones" class="mb-12">
+            <h2 class="text-2xl font-semibold text-purple-700 mb-4">Donaciones</h2>
+            <p class="text-gray-600">Contribuye a la causa mediante donaciones.</p>
+        </section>
+
+        <!-- Sección Disponibilidad y Precios -->
+        <section id="disponibilidad" class="mb-12">
+            <h2 class="text-2xl font-semibold text-purple-700 mb-4">Disponibilidad/Precios</h2>
+            <p class="text-gray-600">Consulta la disponibilidad y precios de nuestros productos.</p>
+        </section>
+
+        <!-- Lista de productos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="productos-container"></div>
+    </main>
+
+    <footer class="w-full bg-purple-700 text-white py-4 text-center">
+        <p class="text-sm">&copy; 2025 Productos Oncológicos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="../components/nav.js"></script>
+</body>
+</html>

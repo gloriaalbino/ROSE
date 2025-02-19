@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Rose</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/img/favicon.png" type="favicon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-pink-100 min-h-screen flex justify-center items-center">
+    <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-2xl">
+        <div class="flex flex-col items-center">
+            <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="w-32 h-32 rounded-full border-4 border-purple-300">
+            <h2 class="mt-4 text-2xl font-semibold text-purple-700">Nombre del Usuario</h2>
+            <p class="text-gray-600">usuario@email.com</p>
+            <input type="password" value="password" class="mt-2 p-2 border border-gray-300 rounded-lg text-gray-700" readonly>
+            <p class="mt-2 text-gray-600">Teléfono: +123456789</p>
+        </div>
+        
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold text-purple-700">Galería de Productos Favoritos</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                <div class="bg-pink-200 p-4 rounded-lg shadow relative">
+                    <button class="absolute top-2 right-2 text-yellow-500 text-xl">★</button>
+                    <img src="https://via.placeholder.com/100" alt="Producto Favorito 1" class="w-full rounded-md">
+                    <p class="mt-2 text-center text-purple-800 font-semibold">Producto Favorito 1</p>
+                </div>
+                <div class="bg-pink-200 p-4 rounded-lg shadow relative">
+                    <button class="absolute top-2 right-2 text-yellow-500 text-xl">★</button>
+                    <img src="https://via.placeholder.com/100" alt="Producto Favorito 2" class="w-full rounded-md">
+                    <p class="mt-2 text-center text-purple-800 font-semibold">Producto Favorito 2</p>
+                </div>
+                <div class="bg-pink-200 p-4 rounded-lg shadow relative">
+                    <button class="absolute top-2 right-2 text-yellow-500 text-xl">★</button>
+                    <img src="https://via.placeholder.com/100" alt="Producto Favorito 3" class="w-full rounded-md">
+                    <p class="mt-2 text-center text-purple-800 font-semibold">Producto Favorito 3</p>
+                </div>
+                <div class="bg-pink-200 p-4 rounded-lg shadow relative">
+                    <button class="absolute top-2 right-2 text-yellow-500 text-xl">★</button>
+                    <img src="https://via.placeholder.com/100" alt="Producto Favorito 4" class="w-full rounded-md">
+                    <p class="mt-2 text-center text-purple-800 font-semibold">Producto Favorito 4</p>
+                </div>
+                <div class="bg-pink-200 p-4 rounded-lg shadow relative">
+                    <button class="absolute top-2 right-2 text-yellow-500 text-xl">★</button>
+                    <img src="https://via.placeholder.com/100" alt="Producto Favorito 5" class="w-full rounded-md">
+                    <p class="mt-2 text-center text-purple-800 font-semibold">Producto Favorito 5</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Medicamentos</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-soft-pink { background-color: #fce4ec; }
+        .bg-soft-purple { background-color: #e1bee7; }
+        .text-soft-purple { color: #8e24aa; }
+    </style>
+</head>
+<body class="bg-soft-pink min-h-screen flex justify-center items-center">
+    <div class="w-full max-w-5xl bg-white p-6 rounded-lg shadow-lg">
+        <div class="flex justify-end mb-4">
+            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-purple-500 hover:bg-purple-700">Agregar Nuevo Producto</button>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-soft-purple mb-6 text-center">Panel de Administración - Medicamentos</h1>
+        
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-soft-purple text-white rounded-lg shadow-lg">
+                <thead>
+                    <tr class="text-left">
+                        <th class="py-3 px-4">Nombre</th>
+                        <th class="py-3 px-4">Lote</th>
+                        <th class="py-3 px-4">Fecha de Vencimiento</th>
+                        <th class="py-3 px-4">Concentración</th>
+                        <th class="py-3 px-4">Forma Farmacéutica</th>
+                        <th class="py-3 px-4">Precio</th>
+                        <th class="py-3 px-4">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="text-black">
+                    <tr class="bg-white border-b">
+                        <td class="py-2 px-4">Trastuzumab</td>
+                        <td class="py-2 px-4">L12345</td>
+                        <td class="py-2 px-4">2025-09-15</td>
+                        <td class="py-2 px-4">150 mg</td>
+                        <td class="py-2 px-4">Inyección</td>
+                        <td class="py-2 px-4">$1,200.00</td>
+                        <td class="py-2 px-4 flex gap-2">
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">Modificar</button>
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr class="bg-white border-b">
+                        <td class="py-2 px-4">Letrozol</td>
+                        <td class="py-2 px-4">L67890</td>
+                        <td class="py-2 px-4">2026-03-22</td>
+                        <td class="py-2 px-4">2.5 mg</td>
+                        <td class="py-2 px-4">Tableta</td>
+                        <td class="py-2 px-4">$150.00</td>
+                        <td class="py-2 px-4 flex gap-2">
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">Modificar</button>
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="index.js"></script>
+
+</body>
+</html>

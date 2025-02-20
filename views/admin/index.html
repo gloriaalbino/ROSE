@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Administración - Medicamentos</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Panel de AdminRose</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/img/favicon.png" type="favicon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
         .bg-soft-pink { background-color: #fce4ec; }
         .bg-soft-purple { background-color: #e1bee7; }
@@ -13,13 +14,18 @@
     </style>
 </head>
 <body class="bg-soft-pink min-h-screen flex justify-center items-center">
-    <div class="w-full max-w-5xl bg-white p-6 rounded-lg shadow-lg">
+    <!-- Navbar fijo -->
+    <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10 h-16"></nav>
+
+    <div class="w-full max-w-7xl bg-white p-6 rounded-lg shadow-lg">
         <div class="flex justify-end mb-4">
-            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-purple-500 hover:bg-purple-700">Agregar Nuevo Producto</button>
+            <button onclick="openModal()" class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-purple-500 hover:bg-purple-700">
+                Agregar Nuevo Producto
+            </button>
         </div>
-        
+
         <h1 class="text-3xl font-bold text-soft-purple mb-6 text-center">Panel de Administración - Medicamentos</h1>
-        
+
         <div class="overflow-x-auto">
             <table class="min-w-full bg-soft-purple text-white rounded-lg shadow-lg">
                 <thead>
@@ -42,27 +48,66 @@
                         <td class="py-2 px-4">Inyección</td>
                         <td class="py-2 px-4">$1,200.00</td>
                         <td class="py-2 px-4 flex gap-2">
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">Modificar</button>
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b">
-                        <td class="py-2 px-4">Letrozol</td>
-                        <td class="py-2 px-4">L67890</td>
-                        <td class="py-2 px-4">2026-03-22</td>
-                        <td class="py-2 px-4">2.5 mg</td>
-                        <td class="py-2 px-4">Tableta</td>
-                        <td class="py-2 px-4">$150.00</td>
-                        <td class="py-2 px-4 flex gap-2">
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">Modificar</button>
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
+                            <button onclick="openModal()" class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">
+                                Modificar
+                            </button>
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">
+                                Eliminar
+                            </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <script src="index.js"></script>
 
+    <!-- Modal sin scroll con campos en columna -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-6xl">
+            <h2 class="text-2xl font-bold text-center text-soft-purple mb-4">Agregar / Modificar Medicamento</h2>
+
+            <div class="flex flex-col gap-4">
+                <label class="font-semibold text-gray-700">Nombre del Medicamento</label>
+                <input type="text" placeholder="Ej: Trastuzumab" class="p-3 border rounded w-full">
+
+                <label class="font-semibold text-gray-700">Lote</label>
+                <input type="text" placeholder="Ej: L12345" class="p-3 border rounded w-full">
+
+                <label class="font-semibold text-gray-700">Fecha de Vencimiento</label>
+                <input type="date" class="p-3 border rounded w-full">
+
+                <label class="font-semibold text-gray-700">Concentración</label>
+                <input type="text" placeholder="Ej: 150 mg" class="p-3 border rounded w-full">
+
+                <label class="font-semibold text-gray-700">Forma Farmacéutica</label>
+                <input type="text" placeholder="Ej: Inyección" class="p-3 border rounded w-full">
+
+                <label class="font-semibold text-gray-700">Precio</label>
+                <input type="number" placeholder="Ej: 1200.00" class="p-3 border rounded w-full">
+            </div>
+
+            <!-- Botones alineados sin desbordamiento -->
+            <div class="flex justify-end gap-4 mt-6">
+                <button onclick="closeModal()" class="px-4 py-2 rounded-md text-white bg-gray-500 hover:bg-gray-700">
+                    Cancelar
+                </button>
+                <button class="px-4 py-2 rounded-md text-white bg-purple-500 hover:bg-purple-700">
+                    Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+
+    <script src="index.js"></script>
+    <script src="../components/nav.js"></script>
 </body>
 </html>

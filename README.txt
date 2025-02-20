@@ -41,29 +41,31 @@ A través de ROSE, los usuarios pueden:
 ## 🛠️ Instalación y Configuración
 
 ### 1. **Clonar el Repositorio**
-```sh
-  git clone https://github.com/tuusuario/tu-repositorio.git
-  cd tu-repositorio
-```
+
+  git clone https://github.com/gloriaalbino/ROSE
+  cd ROSE
 
 ### 2. **Instalar Dependencias**
 Ejecuta el siguiente comando en la carpeta del proyecto:
-```sh
+
   npm install
-```
 
 ### 3. **Configurar Variables de Entorno**
 Crea un archivo `.env` y agrega:
 ```env
-PORT=3000
-MONGO_URL=mongodb+srv://usuario:contraseña@cluster.mongodb.net/nombreDB
+PORT=47000
+MONGO_URL=mongodb+srv://gloriaalbinogg:1234@cluster0.sd892.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ```
 
 ### 4. **Ejecutar la Aplicación**
-```sh
+
   npm run start
-```
-La aplicación estará disponible en: [http://localhost:47000](http://localhost:47000)
+
+La aplicación estará disponible en: http://localhost:47000
+
+### 4. **Datos del Administrador**
+Correo: gloriaalbino.gg@gmail.com
+Clave: Quimica1203*
 
 ---
 ## 📡 Contacto

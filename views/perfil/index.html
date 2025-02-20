@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Rose</title>
+    <title>Perfil Rose</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="/img/favicon.png" type="favicon">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body class="bg-pink-100 min-h-screen flex justify-center items-center">
+     <!-- Navbar fijo -->
+     <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10">
+    </nav>
     <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-2xl">
         <div class="flex flex-col items-center">
             <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="w-32 h-32 rounded-full border-4 border-purple-300">
@@ -49,5 +52,7 @@
             </div>
         </div>
     </div>
+    <script src="../components/nav.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

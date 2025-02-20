@@ -13,8 +13,8 @@ const userSchema = new mongoose.Schema({
     password:String,
     rol:{
         type:String,
-        enum: ['admin', 'user'],
-        default: 'user'
+        //: ['admin', 'user'],
+        //default: 'user'
     },
     varified:{
         type:Boolean,

@@ -53,7 +53,7 @@ Ejecuta el siguiente comando en la carpeta del proyecto:
 ### 3. **Configurar Variables de Entorno**
 Crea un archivo `.env` y agrega:
 ```env
-PORT=47000
+PORT=4000
 MONGO_URL=mongodb+srv://gloriaalbinogg:1234@cluster0.sd892.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ```
 

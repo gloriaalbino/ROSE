@@ -14,7 +14,7 @@ const userRouter = require('./controllers/users')
     }
 
 //crear rutas de frontend
-app.use('/',express.static(path.resolve('views','/'))) //REVISAR
+app.use('/',express.static(path.resolve('views','principal'))) //REVISAR
 app.use('/principal',express.static(path.resolve('views','principal')))
 app.use('/sesion', express.static(path.resolve('views', 'sesion')))
 app.use('/registro', express.static(path.resolve('views', 'registro')))

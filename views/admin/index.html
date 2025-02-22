@@ -15,13 +15,12 @@
 </head>
 <body class="bg-soft-pink min-h-screen flex justify-center items-center">
     <!-- Navbar fijo -->
-    <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10 h-16"></nav>
+    <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10 h-16">
+    </nav>
 
     <div class="w-full max-w-7xl bg-white p-6 rounded-lg shadow-lg">
         <div class="flex justify-end mb-4">
-            <button onclick="openModal()" class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-purple-500 hover:bg-purple-700">
-                Agregar Nuevo Producto
-            </button>
+            <button onclick="openModal()" class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-purple-500 hover:bg-purple-700">Agregar Nuevo Producto</button>
         </div>
 
         <h1 class="text-3xl font-bold text-soft-purple mb-6 text-center">Panel de Administración - Medicamentos</h1>
@@ -48,12 +47,20 @@
                         <td class="py-2 px-4">Inyección</td>
                         <td class="py-2 px-4">$1,200.00</td>
                         <td class="py-2 px-4 flex gap-2">
-                            <button onclick="openModal()" class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">
-                                Modificar
-                            </button>
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">
-                                Eliminar
-                            </button>
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">Modificar</button>
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr class="bg-white border-b">
+                        <td class="py-2 px-4">Letrozol</td>
+                        <td class="py-2 px-4">L67890</td>
+                        <td class="py-2 px-4">2026-03-22</td>
+                        <td class="py-2 px-4">2.5 mg</td>
+                        <td class="py-2 px-4">Tableta</td>
+                        <td class="py-2 px-4">$150.00</td>
+                        <td class="py-2 px-4 flex gap-2">
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">Modificar</button>
+                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
                         </td>
                     </tr>
                 </tbody>
@@ -61,39 +68,23 @@
         </div>
     </div>
 
-    <!-- Modal sin scroll con campos en columna -->
+    <!-- Modal para agregar medicamento -->
     <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-6xl">
-            <h2 class="text-2xl font-bold text-center text-soft-purple mb-4">Agregar / Modificar Medicamento</h2>
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl">
+            <h2 class="text-2xl font-bold text-center text-soft-purple mb-4">Agregar Nuevo Medicamento</h2>
 
-            <div class="flex flex-col gap-4">
-                <label class="font-semibold text-gray-700">Nombre del Medicamento</label>
-                <input type="text" placeholder="Ej: Trastuzumab" class="p-3 border rounded w-full">
-
-                <label class="font-semibold text-gray-700">Lote</label>
-                <input type="text" placeholder="Ej: L12345" class="p-3 border rounded w-full">
-
-                <label class="font-semibold text-gray-700">Fecha de Vencimiento</label>
-                <input type="date" class="p-3 border rounded w-full">
-
-                <label class="font-semibold text-gray-700">Concentración</label>
-                <input type="text" placeholder="Ej: 150 mg" class="p-3 border rounded w-full">
-
-                <label class="font-semibold text-gray-700">Forma Farmacéutica</label>
-                <input type="text" placeholder="Ej: Inyección" class="p-3 border rounded w-full">
-
-                <label class="font-semibold text-gray-700">Precio</label>
-                <input type="number" placeholder="Ej: 1200.00" class="p-3 border rounded w-full">
+            <div class="grid grid-cols-2 gap-4">
+                <input type="text" placeholder="Nombre" class="p-2 border rounded w-full">
+                <input type="text" placeholder="Lote" class="p-2 border rounded w-full">
+                <input type="date" placeholder="Fecha de Vencimiento" class="p-2 border rounded w-full">
+                <input type="text" placeholder="Concentración" class="p-2 border rounded w-full">
+                <input type="text" placeholder="Forma Farmacéutica" class="p-2 border rounded w-full">
+                <input type="number" placeholder="Precio" class="p-2 border rounded w-full">
             </div>
 
-            <!-- Botones alineados sin desbordamiento -->
             <div class="flex justify-end gap-4 mt-6">
-                <button onclick="closeModal()" class="px-4 py-2 rounded-md text-white bg-gray-500 hover:bg-gray-700">
-                    Cancelar
-                </button>
-                <button class="px-4 py-2 rounded-md text-white bg-purple-500 hover:bg-purple-700">
-                    Guardar
-                </button>
+                <button onclick="closeModal()" class="px-4 py-2 rounded-md text-white bg-gray-500 hover:bg-gray-700">Cancelar</button>
+                <button class="px-4 py-2 rounded-md text-white bg-purple-500 hover:bg-purple-700">Guardar</button>
             </div>
         </div>
     </div>

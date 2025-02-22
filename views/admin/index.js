@@ -1,71 +1,93 @@
-let editingId = null;
+document.addEventListener("DOMContentLoaded", () => {
+    const tableBody = document.querySelector("tbody");
+    const addButton = document.querySelector(".bg-pink-500");
 
-function openModal(id = null) {
-    document.getElementById('modal').classList.remove('hidden');
-    document.getElementById('modal-title').textContent = id ? "Editar Producto" : "Agregar Producto";
-    document.getElementById('save-btn').textContent = id ? "Guardar Cambios" : "Guardar";
-    
-    if (id) {
-        const product = document.getElementById(id).dataset;
-        document.getElementById('med-nombre').value = product.nombre;
-        document.getElementById('med-lote').value = product.lote;
-        document.getElementById('med-forma').value = product.forma;
-        document.getElementById('med-concentracion').value = product.concentracion;
-        document.getElementById('med-fecha').value = product.fecha;
-        document.getElementById('med-precio').value = product.precio;
-        editingId = id;
-    } else {
-        document.querySelectorAll('#modal input').forEach(input => input.value = '');
-        editingId = null;
+    function deleteRow(event) {
+        if (confirm("¿Estás seguro de que deseas eliminar este medicamento?")) {
+            event.target.closest("tr").remove();
+        }
     }
-}
 
-function closeModal() {
-    document.getElementById('modal').classList.add('hidden');
-}
-
-function saveMedicamento() {
-    const nombre = document.getElementById('med-nombre').value;
-    const lote = document.getElementById('med-lote').value;
-    const forma = document.getElementById('med-forma').value;
-    const concentracion = document.getElementById('med-concentracion').value;
-    const fecha = document.getElementById('med-fecha').value;
-    const precio = document.getElementById('med-precio').value;
-    
-    if (!nombre || !lote || !forma || !concentracion || !fecha || !precio) {
-        alert("Todos los campos son obligatorios");
-        return;
+    function editRow(event) {
+        const row = event.target.closest("tr");
+        const cells = row.querySelectorAll("td:not(:last-child)");
+        
+        if (event.target.innerText === "Editar") {
+            cells.forEach(cell => {
+                if (cell.classList.contains("image-cell")) {
+                    const fileInput = document.createElement("input");
+                    fileInput.type = "file";
+                    fileInput.accept = "image/*";
+                    cell.innerText = "";
+                    cell.appendChild(fileInput);
+                } else {
+                    const input = document.createElement("input");
+                    input.type = "text";
+                    input.value = cell.innerText;
+                    cell.innerText = "";
+                    cell.appendChild(input);
+                }
+            });
+            event.target.innerText = "Guardar";
+            event.target.classList.remove("bg-green-400", "hover:bg-green-600");
+            event.target.classList.add("bg-blue-400", "hover:bg-blue-600");
+        } else {
+            cells.forEach(cell => {
+                if (cell.classList.contains("image-cell")) {
+                    const fileInput = cell.querySelector("input[type='file']");
+                    if (fileInput && fileInput.files.length > 0) {
+                        const img = document.createElement("img");
+                        img.src = URL.createObjectURL(fileInput.files[0]);
+                        img.classList.add("w-16", "h-16", "object-cover");
+                        cell.innerText = "";
+                        cell.appendChild(img);
+                    }
+                } else {
+                    cell.innerText = cell.firstChild.value;
+                }
+            });
+            event.target.innerText = "Editar";
+            event.target.classList.remove("bg-blue-400", "hover:bg-blue-600");
+            event.target.classList.add("bg-green-400", "hover:bg-green-600");
+        }
     }
-    
-    if (editingId) {
-        document.getElementById(editingId).innerHTML = generateRowHTML(editingId, nombre, lote, forma, concentracion, fecha, precio);
-    } else {
-        const newId = `med-${Date.now()}`;
-        document.getElementById('product-list').innerHTML += generateRowHTML(newId, nombre, lote, forma, concentracion, fecha, precio);
+
+    function saveRow(event) {
+        const row = event.target.closest("tr");
+        const inputs = row.querySelectorAll("input");
+        
+        inputs.forEach(input => {
+            input.parentElement.innerText = input.value;
+        });
+        
+        event.target.remove();
     }
-    
-    closeModal();
-}
 
-function generateRowHTML(id, nombre, lote, forma, concentracion, fecha, precio) {
-    return `<tr id="${id}" class="bg-white border-b" data-nombre="${nombre}" data-lote="${lote}" data-forma="${forma}" data-concentracion="${concentracion}" data-fecha="${fecha}" data-precio="${precio}">
-                <td class="py-2 px-4">${nombre}</td>
-                <td class="py-2 px-4">${lote}</td>
-                <td class="py-2 px-4">${forma}</td>
-                <td class="py-2 px-4">${concentracion}</td>
-                <td class="py-2 px-4">${fecha}</td>
-                <td class="py-2 px-4">$${precio}</td>
-                <td class="py-2 px-4 flex gap-2">
-                    <button onclick="openModal('${id}')" class="px-4 py-2 rounded-md text-white bg-pink-500 hover:bg-pink-700">Editar</button>
-                    <button onclick="deleteMedicamento('${id}')" class="px-4 py-2 rounded-md text-white bg-red-500 hover:bg-red-700">Eliminar</button>
-                </td>
-            </tr>`;
-}
+    addButton.addEventListener("click", () => {
+        const newRow = document.createElement("tr");
+        newRow.classList.add("bg-white", "border-b");
+        newRow.innerHTML = `
+            <td class="py-2 px-4 image-cell"><input type="file" accept="image/*"></td>
+            <td class="py-2 px-4"><input type="text" placeholder="Nombre"></td>
+            <td class="py-2 px-4"><input type="text" placeholder="Lote"></td>
+            <td class="py-2 px-4"><input type="date"></td>
+            <td class="py-2 px-4"><input type="text" placeholder="Concentración"></td>
+            <td class="py-2 px-4"><input type="text" placeholder="Forma Farmacéutica"></td>
+            <td class="py-2 px-4"><input type="number" placeholder="Precio"></td>
+            <td class="py-2 px-4 flex gap-2">
+                <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-green-400 hover:bg-green-600">Editar</button>
+                <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
+                <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-blue-400 hover:bg-blue-600">Guardar</button>
+            </td>
+        `;
+        tableBody.appendChild(newRow);
+        newRow.querySelector(".bg-green-400").addEventListener("click", editRow);
+        newRow.querySelector(".bg-red-500").addEventListener("click", deleteRow);
+        newRow.querySelector(".bg-blue-400").addEventListener("click", saveRow);
+    });
 
-function deleteMedicamento(id) {
-    if (confirm("¿Seguro que deseas eliminar este medicamento?")) {
-        document.getElementById(id).remove();
-    }
-}
+    document.querySelectorAll(".bg-green-400").forEach(btn => btn.addEventListener("click", editRow));
+    document.querySelectorAll(".bg-red-500").forEach(btn => btn.addEventListener("click", deleteRow));
+});
 
-document.getElementById('save-btn').addEventListener('click', saveMedicamento);
+

@@ -61,7 +61,7 @@ MONGO_URL=mongodb+srv://gloriaalbinogg:1234@cluster0.sd892.mongodb.net/?retryWri
 
   npm run start
 
-La aplicación estará disponible en: http://localhost:47000
+La aplicación estará disponible en:
 
 ### 4. **Datos del Administrador**
 Correo: gloriaalbino.gg@gmail.com

@@ -26,7 +26,7 @@
   <div class="w-full max-w-7xl mx-auto mt-20 relative overflow-hidden">
     <div class="relative w-full overflow-hidden">
       <div class="flex transition-transform duration-500 ease-in-out" id="carrusel">
-        <!-- Slides del carrusel (puedes inyectar con JS) -->
+        <!-- Slides del carrusel (con JS) -->
       </div>
       <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full">❮</button>
       <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full">❯</button>
@@ -42,7 +42,7 @@
       <div class="bg-white rounded-lg shadow p-6 text-center">
         <img src="img/canje.png" alt="">
         <h3 class="text-xl font-semibold text-purple-700 mb-2">Canje</h3>
-        <p class="text-gray-600 mb-4">Intercambio de medicamentos oncológicos para garantizar acceso equitativo.</p>
+        <p class="text-gray-600 mb-4">Intercambio de medicamentos para garantizar acceso equitativo.</p>
         <button 
           id="openCanje"
           class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
@@ -101,7 +101,7 @@
 
   <!-- Footer -->
   <footer class="w-full bg-purple-700 text-white py-4 text-center">
-    <p class="text-sm">&copy; 2025 Productos Oncológicos. Todos los derechos reservados.</p>
+    <p class="text-sm">&copy; 2025 ROSE. Elaborado por: Gloria González.Todos los derechos reservados.</p>
   </footer>
 
   <!-- Modal: Canje -->
@@ -185,60 +185,8 @@
       </button>
     </div>
   </div>
-
   <!-- Scripts -->
   <script src="index.js"></script>
   <script src="../components/nav.js"></script>
-
-  <!-- Script para manejar los modales -->
-  <script>
-    // Seleccionar botones "Ver más"
-    const btnOpenCanje = document.getElementById('openCanje');
-    const btnOpenDonaciones = document.getElementById('openDonaciones');
-    const btnOpenDisponibilidad = document.getElementById('openDisponibilidad');
-
-    // Seleccionar modales
-    const modalCanje = document.getElementById('modalCanje');
-    const modalDonaciones = document.getElementById('modalDonaciones');
-    const modalDisponibilidad = document.getElementById('modalDisponibilidad');
-
-    // Botones "Cerrar"
-    const btnCloseCanje = document.getElementById('closeCanje');
-    const btnCloseCanjeX = document.getElementById('closeCanjeX');
-    const btnCloseDonaciones = document.getElementById('closeDonaciones');
-    const btnCloseDonacionesX = document.getElementById('closeDonacionesX');
-    const btnCloseDisponibilidad = document.getElementById('closeDisponibilidad');
-    const btnCloseDisponibilidadX = document.getElementById('closeDisponibilidadX');
-
-    // Funciones para abrir/cerrar modales
-    function openModal(modal) {
-      modal.classList.remove('hidden');
-    }
-    function closeModal(modal) {
-      modal.classList.add('hidden');
-    }
-
-    // Eventos para abrir
-    btnOpenCanje.addEventListener('click', () => openModal(modalCanje));
-    btnOpenDonaciones.addEventListener('click', () => openModal(modalDonaciones));
-    btnOpenDisponibilidad.addEventListener('click', () => openModal(modalDisponibilidad));
-
-    // Eventos para cerrar
-    btnCloseCanje.addEventListener('click', () => closeModal(modalCanje));
-    btnCloseCanjeX.addEventListener('click', () => closeModal(modalCanje));
-
-    btnCloseDonaciones.addEventListener('click', () => closeModal(modalDonaciones));
-    btnCloseDonacionesX.addEventListener('click', () => closeModal(modalDonaciones));
-
-    btnCloseDisponibilidad.addEventListener('click', () => closeModal(modalDisponibilidad));
-    btnCloseDisponibilidadX.addEventListener('click', () => closeModal(modalDisponibilidad));
-
-    // Cerrar modal al hacer clic en el fondo (opcional)
-    window.addEventListener('click', (e) => {
-      if (e.target === modalCanje) closeModal(modalCanje);
-      if (e.target === modalDonaciones) closeModal(modalDonaciones);
-      if (e.target === modalDisponibilidad) closeModal(modalDisponibilidad);
-    });
-  </script>
 </body>
 </html>

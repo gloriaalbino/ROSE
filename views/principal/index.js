@@ -50,7 +50,7 @@ const productos = [
     
     // Contenedor principal de productos
     const container = document.getElementById("productos-container");
-    if (!container) return; // Evitar errores si no existe el contenedor
+    if (!container) return;
     container.innerHTML = "";
   
     // Crear tarjetas
@@ -64,7 +64,7 @@ const productos = [
         <p class="text-sm text-gray-600">Concentración: ${producto.concentracion}</p>
         <p class="text-sm text-gray-600">Forma: ${producto.forma}</p>
         <p class="text-sm text-gray-600">Lote: ${producto.lote}</p>
-  
+    
         <!-- Botones -->
         <div class="mt-4 flex justify-between">
           <button class="bg-purple-500 text-white py-1 px-4 rounded-lg hover:bg-purple-600 transition detalles-btn">
@@ -78,13 +78,13 @@ const productos = [
       
       // Insertar la tarjeta en el contenedor
       container.appendChild(card);
-  
+    
       // EVENTO: Botón "Agregar"
       const addCartBtn = card.querySelector(".add-cart-btn");
       addCartBtn.addEventListener("click", () => {
         agregarAlCarrito(producto);
       });
-  
+    
       // EVENTO: Botón "Detalles" (puedes personalizar la lógica o abrir un modal)
       const detallesBtn = card.querySelector(".detalles-btn");
       detallesBtn.addEventListener("click", () => {
@@ -92,6 +92,7 @@ const productos = [
       });
     });
   }
+  
   
   /*****************************************************
    * 2. CONFIGURAR EL CARRUSEL (3 PRODUCTOS A LA VEZ)
@@ -202,7 +203,9 @@ const productos = [
    * 4. AGREGAR AL CARRITO
    *****************************************************/
   function agregarAlCarrito(producto) {
+    // Agregamos el producto al array
     cartItems.push(producto);
+    // Actualizamos la UI del carrito
     actualizarCarritoUI();
   }
   
@@ -210,17 +213,16 @@ const productos = [
    * 5. ACTUALIZAR LA INTERFAZ DEL CARRITO
    *****************************************************/
   function actualizarCarritoUI() {
-    // Actualizar badge
+    // Actualizamos el badge
     const cartBadge = document.getElementById("cart-badge");
     if (cartBadge) {
       cartBadge.innerText = cartItems.length;
     }
   
-    // Actualizar lista de items
+    // Actualizamos la lista de productos en el carrito
     const cartItemsList = document.getElementById("cart-items");
     if (cartItemsList) {
-      cartItemsList.innerHTML = "";
-      
+      cartItemsList.innerHTML = ""; // Limpiar lista
       cartItems.forEach((item, index) => {
         const li = document.createElement("li");
         li.className = "flex justify-between items-center border-b py-2";
@@ -231,7 +233,7 @@ const productos = [
         cartItemsList.appendChild(li);
       });
   
-      // Agregar eventos para remover cada producto
+      // Agregar eventos para remover productos individualmente
       const removeBtns = cartItemsList.querySelectorAll("button[data-index]");
       removeBtns.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -241,5 +243,63 @@ const productos = [
         });
       });
     }
+  
+    // (Opcional) Actualizar el total si lo deseas
+    const cartTotal = document.getElementById("cart-total");
+    if (cartTotal) {
+      // Aquí podrías calcular el total según el precio de cada producto.
+      // Por ejemplo, si cada producto tiene un precio, sumar esos valores.
+      // Como ejemplo, supongamos que cada producto cuesta $10:
+      const total = cartItems.length * 10;
+      cartTotal.innerText = `$${total}`;
+    }
   }
+
+      // Seleccionar botones "Ver más"
+      const btnOpenCanje = document.getElementById('openCanje');
+      const btnOpenDonaciones = document.getElementById('openDonaciones');
+      const btnOpenDisponibilidad = document.getElementById('openDisponibilidad');
+  
+      // Seleccionar modales
+      const modalCanje = document.getElementById('modalCanje');
+      const modalDonaciones = document.getElementById('modalDonaciones');
+      const modalDisponibilidad = document.getElementById('modalDisponibilidad');
+  
+      // Botones "Cerrar"
+      const btnCloseCanje = document.getElementById('closeCanje');
+      const btnCloseCanjeX = document.getElementById('closeCanjeX');
+      const btnCloseDonaciones = document.getElementById('closeDonaciones');
+      const btnCloseDonacionesX = document.getElementById('closeDonacionesX');
+      const btnCloseDisponibilidad = document.getElementById('closeDisponibilidad');
+      const btnCloseDisponibilidadX = document.getElementById('closeDisponibilidadX');
+  
+      // Funciones para abrir/cerrar modales
+      function openModal(modal) {
+        modal.classList.remove('hidden');
+      }
+      function closeModal(modal) {
+        modal.classList.add('hidden');
+      }
+  
+      // Eventos para abrir
+      btnOpenCanje.addEventListener('click', () => openModal(modalCanje));
+      btnOpenDonaciones.addEventListener('click', () => openModal(modalDonaciones));
+      btnOpenDisponibilidad.addEventListener('click', () => openModal(modalDisponibilidad));
+  
+      // Eventos para cerrar
+      btnCloseCanje.addEventListener('click', () => closeModal(modalCanje));
+      btnCloseCanjeX.addEventListener('click', () => closeModal(modalCanje));
+  
+      btnCloseDonaciones.addEventListener('click', () => closeModal(modalDonaciones));
+      btnCloseDonacionesX.addEventListener('click', () => closeModal(modalDonaciones));
+  
+      btnCloseDisponibilidad.addEventListener('click', () => closeModal(modalDisponibilidad));
+      btnCloseDisponibilidadX.addEventListener('click', () => closeModal(modalDisponibilidad));
+  
+      // Cerrar modal al hacer clic en el fondo (opcional)
+      window.addEventListener('click', (e) => {
+        if (e.target === modalCanje) closeModal(modalCanje);
+        if (e.target === modalDonaciones) closeModal(modalDonaciones);
+        if (e.target === modalDisponibilidad) closeModal(modalDisponibilidad);
+      });
   

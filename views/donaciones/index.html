@@ -13,19 +13,60 @@
         .bg-soft-pink { background-color: #fce4ec; }
         .bg-soft-purple { background-color: #e1bee7; }
         .text-soft-purple { color: #8e24aa; }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        /* Animación de fade in */
+        @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+        }
+        .animate-fadeIn {
+        animation: fadeIn 1s ease-in-out forwards;
+        }
     </style>
 </head>
 <body class="bg-soft-pink flex flex-col justify-center items-center min-h-screen">
      <!-- Navbar fijo -->
      <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10 h-16">
     </nav>
-    <h1 class="text-4xl font-bold text-soft-purple mb-6">Donaciones de Productos Oncológicos</h1>
-    
-    <div class="flex gap-6">
-        <button onclick="openModal('donateModal')" class="bg-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700">Dar Donación</button>
-        <button onclick="openModal('receiveModal')" class="bg-pink-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-pink-700">Recibir Donación</button>
+ 
+<!-- Layout para dispositivos móviles (default) -->
+<div class="md:hidden p-4">
+    <h1 class="text-4xl font-bold text-soft-purple text-center mb-4">
+      Donaciones de<br>Productos Oncológicos
+    </h1>
+    <img class="w-full rounded-lg shadow-md" src="img/imgdonaciones.png" alt="imagen-portada">
+    <div class="flex flex-col gap-4 mt-4">
+      <button onclick="openModal('donateModal')" class="bg-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700">
+        Dar Donación
+      </button>
+      <button onclick="openModal('receiveModal')" class="bg-pink-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-pink-700">
+        Recibir Donación
+      </button>
     </div>
-
+  </div>
+  
+  <!-- Layout para pantallas medianas en adelante -->
+  <div class="hidden md:block relative">
+    <img class="w-full rounded-lg shadow-md" src="img/imgdonaciones.png" alt="imagen-portada">
+    <!-- Contenedor del título y botones en el lado izquierdo -->
+    <div class="absolute top-1/2 left-4 transform -translate-y-1/2 flex flex-col gap-4">
+      <h1 class="text-4xl font-bold text-soft-purple animate-fadeIn">
+        Donaciones de<br>Productos Oncológicos
+      </h1>
+      <div class="flex flex-col gap-4">
+        <button onclick="openModal('donateModal')" class="bg-purple-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700">
+          Dar Donación
+        </button>
+        <button onclick="openModal('receiveModal')" class="bg-pink-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-pink-700">
+          Recibir Donación
+        </button>
+      </div>
+    </div>
+  </div>    
+      
+      
     <!-- Modal Dar Donación -->
     <div id="donateModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
         <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">

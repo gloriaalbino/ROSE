@@ -56,54 +56,35 @@ const crearNavPrincipal = ()=>{
         </button>
       </div>
       
-      <!-- Ícono de carrito (visible en todas las resoluciones) -->
-      <div class="relative ml-4" id="cart-container">
+    <div class="relative ml-4" id="cart-container">
         <button id="cart-toggle" class="focus:outline-none relative">
-          <!-- Icono de carrito (Heroicons) -->
-          <svg
-            class="w-8 h-8 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 3h2l.4 2M7 13h10l4-8H5.2l1.3 6.4a2 2 0 002 1.6h12"
-            />
-            <circle cx="9" cy="21" r="1" />
-            <circle cx="20" cy="21" r="1" />
-          </svg>
-          <!-- Badge con número de artículos -->
-          <span class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">3</span>
+            <!-- Icono de carrito (Heroicons) -->
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.2l1.3 6.4a2 2 0 002 1.6h12"/>
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            </svg>
+            <!-- Badge con número de artículos (agregamos id="cart-badge") -->
+            <span id="cart-badge" class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">0</span>
         </button>
-        
-        <!-- Menú desplegable del carrito (oculto por defecto) -->
-        <div id="cart-dropdown" class="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-md p-4 hidden">
-          <p class="text-gray-700 font-semibold mb-2">Tu carrito</p>
-          <ul class="text-sm">
-            <li class="flex justify-between items-center border-b py-2">
-              <span>Producto 1</span>
-              <span>$10</span>
-            </li>
-            <li class="flex justify-between items-center border-b py-2">
-              <span>Producto 2</span>
-              <span>$15</span>
-            </li>
-          </ul>
-          <div class="mt-4 flex justify-between">
-            <span class="font-bold">Total:</span>
-            <span class="font-bold">$25</span>
-          </div>
-          <button
-            class="mt-4 w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-800 transition"
-          >
-            Eliminar todos
-          </button>
-        </div>
-      </div>
+
+
+        <!-- Menú desplegable del carrito (agregamos id="cart-items" para la lista) -->
+            <div id="cart-dropdown" class="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-md p-4 hidden">
+                <p class="text-gray-700 font-semibold mb-2">Tu carrito</p>
+                <ul id="cart-items" class="text-sm">
+                    <!-- Aquí se inyectarán los productos -->
+                </ul>
+                <div class="mt-4 flex justify-between">
+                    <span class="font-bold">Total:</span>
+                    <span id="cart-total" class="font-bold">$0</span>
+                </div>
+                <button id="cart-clear" class="mt-4 w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-800 transition">
+                    Eliminar todos
+                </button>
+            </div>
       
       <!-- Ícono menú hamburguesa (visible solo en móvil) -->
       <button
@@ -135,7 +116,7 @@ const crearNavPrincipal = ()=>{
   <!-- Menú desplegable en móviles (oculto por defecto) -->
   <div
     id="mobile-menu"
-    class="sm:hidden flex flex-col items-center bg-purple-600 py-4 space-y-2 hidden"
+    class="sm:hidden flex flex-col items-center bg-purple-600 py-4 space-y-2"
   >
     <button
       onclick="location.href='/sesion'"

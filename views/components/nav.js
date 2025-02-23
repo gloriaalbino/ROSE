@@ -7,10 +7,12 @@ const crearNavPrincipal = ()=>{
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center h-16">
       
-      <!-- Logo -->
+       <!-- Logo + Nombre con enlace -->
       <div class="flex items-center space-x-4">
-        <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
-        <span class="font-semibold text-lg">ROSE</span>
+        <a href="/principal/" class="flex items-center space-x-2">
+          <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
+          <span class="font-semibold text-lg">ROSE</span>
+        </a>
       </div>
       
       <!-- Barra de búsqueda: en móvil se centra (w-40), en desktop se alarga y alinea a la derecha (w-80) -->
@@ -177,10 +179,12 @@ const crearNav = ()=>{
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center h-16">
       
-      <!-- Logo -->
+      <!-- Logo + Nombre con enlace -->
       <div class="flex items-center space-x-4">
-        <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
-        <span class="font-semibold text-lg">ROSE</span>
+        <a href="/principal/" class="flex items-center space-x-2">
+          <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
+          <span class="font-semibold text-lg">ROSE</span>
+        </a>
       </div>
       
       <!-- Barra de búsqueda: en móvil se centra (w-40), en desktop se alarga y alinea a la derecha (w-80) -->
@@ -347,11 +351,13 @@ const crearNavSesion = ()=>{
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center h-16">
           
-          <!-- Logo -->
-          <div class="flex items-center space-x-4">
-            <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
-            <span class="font-semibold text-lg">ROSE</span>
-          </div>
+         <!-- Logo + Nombre con enlace -->
+      <div class="flex items-center space-x-4">
+        <a href="/principal/" class="flex items-center space-x-2">
+          <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
+          <span class="font-semibold text-lg">ROSE</span>
+        </a>
+      </div>
           
           <!-- Barra de búsqueda: en móvil se centra (w-40), en desktop se alarga y alinea a la derecha (w-80) -->
           <div class="flex-1 flex justify-center sm:justify-end ml-4">
@@ -518,11 +524,13 @@ const crearNavRegistro = ()=>{
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center h-16">
           
-          <!-- Logo -->
-          <div class="flex items-center space-x-4">
+          <!-- Logo + Nombre con enlace -->
+        <div class="flex items-center space-x-4">
+            <a href="/principal/" class="flex items-center space-x-2">
             <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
             <span class="font-semibold text-lg">ROSE</span>
-          </div>
+            </a>
+        </div>
           
           <!-- Barra de búsqueda: en móvil se centra (w-40), en desktop se alarga y alinea a la derecha (w-80) -->
           <div class="flex-1 flex justify-center sm:justify-end ml-4">
@@ -549,7 +557,7 @@ const crearNavRegistro = ()=>{
             </div>
           </div>
           
-          <!-- Menú de escritorio (botones Login y Registro) -->
+          <!-- Menú de escritorio (botones Login y principal) -->
           <div class="hidden sm:flex space-x-4 items-center ml-4">
             <button
               onclick="location.href='/principal/'"
@@ -750,11 +758,13 @@ const crearNavCanje = ()=>{
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center h-16">
           
-          <!-- Logo -->
-          <div class="flex items-center space-x-4">
-            <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
-            <span class="font-semibold text-lg">ROSE</span>
-          </div>
+          <!-- Logo + Nombre con enlace -->
+            <div class="flex items-center space-x-4">
+                <a href="/principal/" class="flex items-center space-x-2">
+                <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
+                <span class="font-semibold text-lg">ROSE</span>
+                </a>
+            </div>
           
           <!-- Barra de búsqueda: en móvil se centra (w-40), en desktop se alarga y alinea a la derecha (w-80) -->
           <div class="flex-1 flex justify-center sm:justify-end ml-4">
@@ -932,11 +942,13 @@ const crearNavDonaciones = ()=>{
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center h-16">
           
-          <!-- Logo -->
-          <div class="flex items-center space-x-4">
-            <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
-            <span class="font-semibold text-lg">ROSE</span>
-          </div>
+          <!-- Logo + Nombre con enlace -->
+            <div class="flex items-center space-x-4">
+                <a href="/principal/" class="flex items-center space-x-2">
+                <img src="/img/favicon.png" alt="logo" class="h-8 w-8">
+                <span class="font-semibold text-lg">ROSE</span>
+                </a>
+            </div>
           
           <!-- Barra de búsqueda: en móvil se centra (w-40), en desktop se alarga y alinea a la derecha (w-80) -->
           <div class="flex-1 flex justify-center sm:justify-end ml-4">

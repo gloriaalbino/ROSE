@@ -78,9 +78,24 @@
       </div>
     </div>
 
-    <!-- Lista de productos (puedes dejarlo o quitarlo) -->
+      <!-- Contenedor para el video de YouTube -->
+      <div class="w-full max-w-7xl mx-auto mt-20 px-4">
+        <!-- Contenedor responsivo: 16:9 -->
+        <div class="relative pb-[56.25%] overflow-hidden rounded-lg shadow-lg">
+          <iframe class="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/KhiUDMIOrRQ"
+            frameborder="1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <br>
+      <br>
+      <h2 class="text-3xl font-bold text-purple-700 mb-8 text-center">Productos relacionados</h2>
+    <!-- Lista de productos-->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12" id="productos-container">
-      <!-- Aquí se inyectan o listan tus productos con JS -->
+        <!-- Aquí se inyectan o listan tus productos con JS -->
     </div>
   </main>
 

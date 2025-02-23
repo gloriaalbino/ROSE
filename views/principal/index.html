@@ -1,63 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rose</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="/img/favicon.png" type="favicon">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rose</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/img/favicon.png" type="favicon">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
 <body class="bg-pink-50 min-h-screen flex flex-col items-center">
-    <!-- Navbar fijo -->
-    <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10">
 
-    </nav>
+  <!-- Navbar fijo -->
+  <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10">
+    <!-- Tu contenido de navbar se inyecta o escribe aquí (por ejemplo, con nav.js) -->
+  </nav>
 
-    <!-- Carrusel -->
-    <div class="w-full max-w-7xl mx-auto mt-20 relative overflow-hidden">
-        <div class="relative w-full overflow-hidden">
-            <div class="flex transition-transform duration-500 ease-in-out" id="carrusel"></div>
-            <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full">❮</button>
-            <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full">❯</button>
-        </div>
+  <!-- Carrusel -->
+  <div class="w-full max-w-7xl mx-auto mt-20 relative overflow-hidden">
+    <div class="relative w-full overflow-hidden">
+      <div class="flex transition-transform duration-500 ease-in-out" id="carrusel">
+        <!-- Slides del carrusel (puedes inyectar con JS) -->
+      </div>
+      <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full">❮</button>
+      <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full">❯</button>
+    </div>
+  </div>
+
+  <!-- Contenido principal (con tarjetas que abren modales) -->
+  <main class="w-full max-w-7xl px-6 py-24">
+    <h2 class="text-3xl font-bold text-purple-700 mb-8 text-center">Información Destacada</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Tarjeta: Canje -->
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <img src="img/canje.png" alt="">
+        <h3 class="text-xl font-semibold text-purple-700 mb-2">Canje</h3>
+        <p class="text-gray-600 mb-4">Intercambio de medicamentos oncológicos para garantizar acceso equitativo.</p>
+        <button 
+          id="openCanje"
+          class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
+        >
+          Ver más
+        </button>
+      </div>
+
+      <!-- Tarjeta: Donaciones -->
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <img src="img/donaciones.png" alt="">
+        <h3 class="text-xl font-semibold text-purple-700 mb-2">Donaciones</h3>
+        <p class="text-gray-600 mb-4">Contribuye a la causa mediante donaciones.</p>
+        <button 
+          id="openDonaciones"
+          class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
+        >
+          Ver más
+        </button>
+      </div>
+
+      <!-- Tarjeta: Disponibilidad/Precios -->
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <img src="img/busqueda.png" alt="">
+        <h3 class="text-xl font-semibold text-purple-700 mb-2">Disponibilidad/Precios</h3>
+        <p class="text-gray-600 mb-4">Consulta la disponibilidad y precios de productos.</p>
+        <button 
+          id="openDisponibilidad"
+          class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
+        >
+          Ver más
+        </button>
+      </div>
     </div>
 
-    <!-- Contenido principal -->
-    <main class="w-full max-w-7xl px-6 py-24">
-        <!-- Sección canje -->
-        <section id="canje" class="mb-12">
-            <h2 class="text-2xl font-semibold text-purple-700 mb-4">canje</h2>
-            <p class="text-gray-600">Intercambio de medicamentos oncológicos para garantizar acceso equitativo.</p>
-        </section>
+    <!-- Lista de productos (puedes dejarlo o quitarlo) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12" id="productos-container">
+      <!-- Aquí se inyectan o listan tus productos con JS -->
+    </div>
+  </main>
 
-        <!-- Sección Donaciones -->
-        <section id="donaciones" class="mb-12">
-            <h2 class="text-2xl font-semibold text-purple-700 mb-4">Donaciones</h2>
-            <p class="text-gray-600">Contribuye a la causa mediante donaciones.</p>
-        </section>
+  <!-- Footer -->
+  <footer class="w-full bg-purple-700 text-white py-4 text-center">
+    <p class="text-sm">&copy; 2025 Productos Oncológicos. Todos los derechos reservados.</p>
+  </footer>
 
-        <!-- Sección Disponibilidad y Precios -->
-        <section id="disponibilidad" class="mb-12">
-            <h2 class="text-2xl font-semibold text-purple-700 mb-4">Disponibilidad/Precios</h2>
-            <p class="text-gray-600">Consulta la disponibilidad y precios de productos.</p>
-        </section>
+  <!-- Modal: Canje -->
+  <div 
+    id="modalCanje"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+  >
+    <!-- Contenedor del modal -->
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full relative">
+      <h3 class="text-2xl font-semibold text-purple-700 mb-4">Detalles sobre Canje</h3>
+      <p class="text-gray-700 mb-4">
+        El canje de medicamentos oncológicos consiste en un intercambio solidario para que personas en distintas zonas tengan acceso a tratamientos esenciales.
+      </p>
+      <!-- Aquí puedes agregar más texto, imágenes, etc. -->
+      <button 
+        id="closeCanje"
+        class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
+      >
+        Cerrar
+      </button>
+      <!-- Icono “cerrar” flotante (opcional) -->
+      <button 
+        id="closeCanjeX"
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
 
-        <!-- Lista de productos -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="productos-container"></div>
-    </main>
+  <!-- Modal: Donaciones -->
+  <div 
+    id="modalDonaciones"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+  >
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full relative">
+      <h3 class="text-2xl font-semibold text-purple-700 mb-4">Detalles sobre Donaciones</h3>
+      <p class="text-gray-700 mb-4">
+        Con las donaciones, ayudas a pacientes que requieren tratamientos costosos. Cada aporte contribuye a que más personas reciban su medicación a tiempo.
+      </p>
+      <!-- Más texto o imágenes -->
+      <button 
+        id="closeDonaciones"
+        class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
+      >
+        Cerrar
+      </button>
+      <!-- Icono “cerrar” flotante (opcional) -->
+      <button 
+        id="closeDonacionesX"
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
 
-    <footer class="w-full bg-purple-700 text-white py-4 text-center">
-        <p class="text-sm">&copy; 2025 Productos Oncológicos. Todos los derechos reservados.</p>
-    </footer>
+  <!-- Modal: Disponibilidad/Precios -->
+  <div 
+    id="modalDisponibilidad"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+  >
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full relative">
+      <h3 class="text-2xl font-semibold text-purple-700 mb-4">Detalles sobre Disponibilidad y Precios</h3>
+      <p class="text-gray-700 mb-4">
+        Consulta qué medicamentos están disponibles en nuestras sedes y sus precios actualizados. Ayudamos a comparar opciones y encontrar la mejor alternativa.
+      </p>
+      <!-- Más texto o imágenes -->
+      <button 
+        id="closeDisponibilidad"
+        class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
+      >
+        Cerrar
+      </button>
+      <!-- Icono “cerrar” flotante (opcional) -->
+      <button 
+        id="closeDisponibilidadX"
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
 
-    <script src="index.js"></script>
-    <script src="../components/nav.js"></script>
+  <!-- Scripts -->
+  <script src="index.js"></script>
+  <script src="../components/nav.js"></script>
+
+  <!-- Script para manejar los modales -->
+  <script>
+    // Seleccionar botones "Ver más"
+    const btnOpenCanje = document.getElementById('openCanje');
+    const btnOpenDonaciones = document.getElementById('openDonaciones');
+    const btnOpenDisponibilidad = document.getElementById('openDisponibilidad');
+
+    // Seleccionar modales
+    const modalCanje = document.getElementById('modalCanje');
+    const modalDonaciones = document.getElementById('modalDonaciones');
+    const modalDisponibilidad = document.getElementById('modalDisponibilidad');
+
+    // Botones "Cerrar"
+    const btnCloseCanje = document.getElementById('closeCanje');
+    const btnCloseCanjeX = document.getElementById('closeCanjeX');
+    const btnCloseDonaciones = document.getElementById('closeDonaciones');
+    const btnCloseDonacionesX = document.getElementById('closeDonacionesX');
+    const btnCloseDisponibilidad = document.getElementById('closeDisponibilidad');
+    const btnCloseDisponibilidadX = document.getElementById('closeDisponibilidadX');
+
+    // Funciones para abrir/cerrar modales
+    function openModal(modal) {
+      modal.classList.remove('hidden');
+    }
+    function closeModal(modal) {
+      modal.classList.add('hidden');
+    }
+
+    // Eventos para abrir
+    btnOpenCanje.addEventListener('click', () => openModal(modalCanje));
+    btnOpenDonaciones.addEventListener('click', () => openModal(modalDonaciones));
+    btnOpenDisponibilidad.addEventListener('click', () => openModal(modalDisponibilidad));
+
+    // Eventos para cerrar
+    btnCloseCanje.addEventListener('click', () => closeModal(modalCanje));
+    btnCloseCanjeX.addEventListener('click', () => closeModal(modalCanje));
+
+    btnCloseDonaciones.addEventListener('click', () => closeModal(modalDonaciones));
+    btnCloseDonacionesX.addEventListener('click', () => closeModal(modalDonaciones));
+
+    btnCloseDisponibilidad.addEventListener('click', () => closeModal(modalDisponibilidad));
+    btnCloseDisponibilidadX.addEventListener('click', () => closeModal(modalDisponibilidad));
+
+    // Cerrar modal al hacer clic en el fondo (opcional)
+    window.addEventListener('click', (e) => {
+      if (e.target === modalCanje) closeModal(modalCanje);
+      if (e.target === modalDonaciones) closeModal(modalDonaciones);
+      if (e.target === modalDisponibilidad) closeModal(modalDisponibilidad);
+    });
+  </script>
 </body>
 </html>

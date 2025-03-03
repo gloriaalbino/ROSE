@@ -1,104 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de AdminRose</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="/img/favicon.png" type="favicon">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <style>
-        .bg-soft-pink { background-color: #fce4ec; }
-        .bg-soft-purple { background-color: #e1bee7; }
-        .text-soft-purple { color: #8e24aa; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Administrador - Productos Oncológicos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Personalización de colores pastel */
+    .bg-pastel-pink { background-color: #fadadd; }
+    .bg-pastel-purple { background-color: #d8bfd8; }
+    .text-pastel-pink { color: #f4c2c2; }
+    .text-pastel-purple { color: #b19cd9; }
+    .border-pastel-pink { border-color: #f4c2c2; }
+    .border-pastel-purple { border-color: #b19cd9; }
+  </style>
 </head>
-<body class="bg-soft-pink min-h-screen flex justify-center items-center">
-    <!-- Navbar fijo -->
-    <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10 h-16">
-    </nav>
+<body class="bg-pastel-pink min-h-screen p-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Título -->
+    <h1 class="text-3xl font-bold text-pastel-purple mb-8">Dashboard Administrador - Productos Oncológicos</h1>
 
-    <div class="w-full max-w-7xl bg-white p-6 rounded-lg shadow-lg">
-        <div class="flex justify-end mb-4">
-            <button onclick="openModal()" class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-purple-500 hover:bg-purple-700">Agregar Nuevo Producto</button>
+    <!-- Botón para agregar nuevo producto -->
+    <button onclick="abrirModal()" class="bg-pastel-purple text-white px-4 py-2 rounded-md mb-6 hover:bg-purple-600 transition-colors">
+      + Agregar Nuevo Producto
+    </button>
+
+    <!-- Galería de productos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Ejemplo de tarjeta de producto -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden p-4">
+        <img src="https://via.placeholder.com/150" alt="Imagen del producto" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold text-pastel-purple">Tamoxifeno</h2>
+          <p class="text-sm text-gray-600">Lote: L12345</p>
+          <p class="text-sm text-gray-600">Vencimiento: 2025-12-31</p>
+          <p class="text-sm text-gray-600">Concentración: 20 mg</p>
+          <p class="text-sm text-gray-600">Forma: Tableta</p>
+          <p class="text-sm text-gray-600">Precio: $50.00</p>
+          <p class="text-sm text-gray-600">Ubicación: Almacén A</p>
+          <div class="mt-4 flex space-x-2">
+            <button onclick="editarProducto(1)" class="bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-700">Editar</button>
+            <button onclick="guardarProducto(1)" class="bg-green-500 text-white px-3 py-2 rounded-md hover:bg-green-700 hidden">Guardar</button>
+            <button onclick="eliminarProducto(1)" class="bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-700">Eliminar</button>
+          </div>
         </div>
-
-        <h1 class="text-3xl font-bold text-soft-purple mb-6 text-center">Panel de Administración - Medicamentos</h1>
-
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-soft-purple text-white rounded-lg shadow-lg">
-                <thead>
-                    <tr class="text-left">
-                        <th class="py-3 px-4">Nombre</th>
-                        <th class="py-3 px-4">Lote</th>
-                        <th class="py-3 px-4">Fecha de Vencimiento</th>
-                        <th class="py-3 px-4">Concentración</th>
-                        <th class="py-3 px-4">Forma Farmacéutica</th>
-                        <th class="py-3 px-4">Precio</th>
-                        <th class="py-3 px-4">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody class="text-black">
-                    <tr class="bg-white border-b">
-                        <td class="py-2 px-4">Trastuzumab</td>
-                        <td class="py-2 px-4">L12345</td>
-                        <td class="py-2 px-4">2025-09-15</td>
-                        <td class="py-2 px-4">150 mg</td>
-                        <td class="py-2 px-4">Inyección</td>
-                        <td class="py-2 px-4">$1,200.00</td>
-                        <td class="py-2 px-4 flex gap-2">
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">Modificar</button>
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b">
-                        <td class="py-2 px-4">Letrozol</td>
-                        <td class="py-2 px-4">L67890</td>
-                        <td class="py-2 px-4">2026-03-22</td>
-                        <td class="py-2 px-4">2.5 mg</td>
-                        <td class="py-2 px-4">Tableta</td>
-                        <td class="py-2 px-4">$150.00</td>
-                        <td class="py-2 px-4 flex gap-2">
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-pink-500 hover:bg-pink-700">Modificar</button>
-                            <button class="px-4 py-2 rounded-md text-white font-semibold shadow-md bg-red-500 hover:bg-red-700">Eliminar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      </div>
+      <!-- Más tarjetas de productos pueden agregarse dinámicamente -->
     </div>
-
-    <!-- Modal para agregar medicamento -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl">
-            <h2 class="text-2xl font-bold text-center text-soft-purple mb-4">Agregar Nuevo Medicamento</h2>
-
-            <div class="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="Nombre" class="p-2 border rounded w-full">
-                <input type="text" placeholder="Lote" class="p-2 border rounded w-full">
-                <input type="date" placeholder="Fecha de Vencimiento" class="p-2 border rounded w-full">
-                <input type="text" placeholder="Concentración" class="p-2 border rounded w-full">
-                <input type="text" placeholder="Forma Farmacéutica" class="p-2 border rounded w-full">
-                <input type="number" placeholder="Precio" class="p-2 border rounded w-full">
-            </div>
-
-            <div class="flex justify-end gap-4 mt-6">
-                <button onclick="closeModal()" class="px-4 py-2 rounded-md text-white bg-gray-500 hover:bg-gray-700">Cancelar</button>
-                <button class="px-4 py-2 rounded-md text-white bg-purple-500 hover:bg-purple-700">Guardar</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openModal() {
-            document.getElementById('modal').classList.remove('hidden');
-        }
-        function closeModal() {
-            document.getElementById('modal').classList.add('hidden');
-        }
-    </script>
-
-    <script src="index.js"></script>
-    <script src="../components/nav.js"></script>
+  </div>
+  <script src="index.js"></script>
+  <script src="../components/nav.js"></script>
 </body>
 </html>

@@ -7,44 +7,68 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="/img/favicon.png" type="favicon">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        body {
+        font-family: 'Poppins', sans-serif;
+        }
+        /* Animación personalizada: fadeIn */
+        @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+        }
+        .animate-fadeIn {
+        animation: fadeIn 1s ease-out forwards;
+        }
+  </style>
 </head>
-<body class="bg-pink-100 min-h-screen flex flex-col items-center justify-center">
-     <!-- Navbar fijo -->
-    <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10 h-16">
+<body class="bg-pink-100 min-h-screen flex flex-col items-center">
+  
+    <!-- Navbar fijo -->
+    <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10 h-16 flex items-center px-4">
+      <!-- Aquí se inyecta o coloca el contenido del navbar -->
     </nav>
-    <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-2xl text-center">
-        <h1 class="text-3xl font-bold text-purple-700">BIENVENIDO</h1>
-        <div class="mt-4 animate-bounce">
-            <img src="https://via.placeholder.com/150" alt="Cáncer de mama" class="mx-auto">
+
+         <!-- Imagen responsiva con animación, justo debajo del navbar -->
+        <div class="w-full max-w-7xl mx-auto mt-20 px-4">
+            <img src="img/imgusuario.png" alt="Imagen destacada" class="w-full h-auto rounded-lg shadow-lg animate-fadeIn">
+            <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-2xl text-center mt-6">
+                <h1 class="text-3xl font-bold text-purple-700">BIENVENID@ A ROSE</h1>
+                <h3 class="text-2xl font-bold text-pink-500">El lugar que te enlaza con tus ganas de vivir</h3>
+            </div>
         </div>
-    </div>
+    
+   
+    
+    <!-- Resto de contenido -->
     
     <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-2xl mt-6">
-        <h2 class="text-xl font-semibold text-purple-700 text-center">Opciones de Productos Oncológicos</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-            <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-                <img src="https://via.placeholder.com/100" alt="Producto Oncológico 1" class="w-full rounded-md">
-                <p class="mt-2 text-purple-800 font-semibold">Producto 1</p>
-            </div>
-            <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-                <img src="https://via.placeholder.com/100" alt="Producto Oncológico 2" class="w-full rounded-md">
-                <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 2</p>
-            </div>
-            <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-                <img src="https://via.placeholder.com/100" alt="Producto Oncológico 3" class="w-full rounded-md">
-                <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 3</p>
-            </div>
-            <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-                <img src="https://via.placeholder.com/100" alt="Producto Oncológico 4" class="w-full rounded-md">
-                <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 4</p>
-            </div>
-            <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-                <img src="https://via.placeholder.com/100" alt="Producto Oncológico 5" class="w-full rounded-md">
-                <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 5</p>
-            </div>
+      <h2 class="text-xl font-semibold text-purple-700 text-center">Opciones de Productos Oncológicos</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
+          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 1" class="w-full rounded-md">
+          <p class="mt-2 text-purple-800 font-semibold">Producto 1</p>
         </div>
+        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
+          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 2" class="w-full rounded-md">
+          <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 2</p>
+        </div>
+        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
+          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 3" class="w-full rounded-md">
+          <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 3</p>
+        </div>
+        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
+          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 4" class="w-full rounded-md">
+          <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 4</p>
+        </div>
+        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
+          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 5" class="w-full rounded-md">
+          <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 5</p>
+        </div>
+      </div>
     </div>
+    
     <script src="index.js"></script>
     <script src="../components/nav.js"></script>
-</body>
-</html>
+  </body>
+  </html>

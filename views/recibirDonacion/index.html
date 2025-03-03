@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recibir donacion Rose</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="favicon" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-r from-pink-200 to-purple-200">
+  <!-- Navbar fijo -->
+  <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10 h-16">
+    <!-- Aquí puedes añadir tu contenido de navegación -->
+  </nav>
+  
+  <!-- Contenedor principal con padding superior para evitar solapamiento -->
+  <div class="pt-20 flex items-center justify-center">
+    <main class="flex justify-center w-full px-4">
+      <!-- Tarjeta del formulario (tamaño modificado a max-w-md) -->
+      <div class="bg-white shadow-md rounded-lg w-full max-w-md px-8 py-6">
+        <img src="../principal/img/donaciones.png" alt="">
+        <h1 class="text-2xl font-bold text-center text-purple-700 mb-6">
+          Recibir donación 
+        </h1>
+        <form>
+          <div class="mb-4">
+            <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">
+              Nombre del Medicamento
+            </label>
+            <input type="text" id="nombre" placeholder="Ej. Quimiolítico" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+          </div>
+          <div class="mb-4">
+            <label for="concentracion" class="block text-gray-700 text-sm font-bold mb-2">
+              Concentración
+            </label>
+            <input type="text" id="concentracion" placeholder="Ej. 500mg" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+          </div>
+          <div class="mb-4">
+            <label for="forma" class="block text-gray-700 text-sm font-bold mb-2">
+              Forma Farmacéutica
+            </label>
+            <input type="text" id="forma" placeholder="Ej. Tableta" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+          </div>
+          <div class="mb-4">
+            <label for="cantidad" class="block text-gray-700 text-sm font-bold mb-2">
+              Cantidad que Requiere
+            </label>
+            <input type="number" id="cantidad" placeholder="Ej. 10" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+          </div>
+          <div class="mb-6">
+            <label for="contacto" class="block text-gray-700 text-sm font-bold mb-2">
+              Número de Contacto
+            </label>
+            <input type="tel" id="contacto" placeholder="Ej. +123456789" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+          </div>
+          <div class="flex justify-center">
+            <button type="submit" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+              Solicitar Donación
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="index.js"></script>
+  <script src="../components/nav.js"></script>
+</body>
+</html>

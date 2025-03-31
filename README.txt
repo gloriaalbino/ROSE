@@ -50,18 +50,11 @@ Ejecuta el siguiente comando en la carpeta del proyecto:
 
   npm install
 
-### 3. **Configurar Variables de Entorno**
-Crea un archivo `.env` y agrega:
-```env
-PORT=4000
-MONGO_URL=mongodb+srv://gloriaalbinogg:1234@cluster0.sd892.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-```
-
-### 4. **Ejecutar la Aplicación**
+### 3. **Ejecutar la Aplicación**
 
   npm run start
 
-La aplicación estará disponible en:
+La aplicación estará disponible en: https://rose-pf.onrender.com
 
 ### 4. **Datos del Administrador**
 Correo: gloriaalbino.gg@gmail.com

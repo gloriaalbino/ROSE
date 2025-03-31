@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 const userRouter = require('./controllers/users')
 const productosRouter = require('./controllers/productos');
+const perfilRouter = require('./controllers/perfil');
 
 // Middleware para parsear JSON
 app.use(express.json()); //maneja las solicitudes
@@ -45,6 +46,7 @@ app.use(express.json());
 //Rutas de backend
 app.use('/api/users',userRouter);
 app.use('/api/productos',productosRouter);
+app.use('/api/perfil', perfilRouter);
 
 //app.use()
 module.exports = app

@@ -47,11 +47,18 @@
       </div>
 
       <!-- Botón para guardar cambios -->
-      <div class="mt-6 w-full flex justify-end">
-        <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition">Guardar cambios</button>
+      <div class="mt-6 w-full flex justify-left">
+        <button id="toggle-edit" class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition">Guardar cambios</button>
       </div>
     </div>
+    <!-- Botón de cerrar sesión ubicado fuera del contenedor de guardar cambios -->
+    <div class="mt-6 w-full flex justify-left">
+        <button id="logout-btn" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+          Cerrar Sesión
+        </button>
+      </div>
   </div>
+    
 
   <script src="../components/nav.js"></script>
   <script src="index.js"></script>

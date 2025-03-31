@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Producto Oncológico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/img/favicon.png" type="favicon">
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-pink-50 min-h-screen">
+   <!-- Navbar fijo -->
+   <nav id="navegacion" class="bg-purple-500 text-white fixed top-0 w-full shadow-md z-10">
+    <!-- Tu contenido de navbar se inyecta o escribe aquí (por ejemplo, con nav.js) -->
+  </nav>
+
+  <!-- Contenedor principal con margen superior para que no quede tapado por el navbar -->
+  <main class="pt-20 px-4">
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Sección Izquierda: Detalle del Producto -->
+      <div class="w-full md:w-1/3">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <!-- Imagen del producto -->
+          <div class="flex justify-center">
+            <img id="imagen" src="" alt="Imagen del producto" class="w-56 h-56 object-cover rounded-md shadow-md mb-4">
+          </div>
+          <!-- Información del producto -->
+          <h2 class="text-2xl font-bold text-purple-600 text-center mb-2" id="nombre">Nombre del Producto</h2>
+          <p class="text-purple-700 text-sm mb-1"><span class="font-semibold">Concentración:</span> <span id="concentracion"></span></p>
+          <p class="text-purple-700 text-sm mb-1"><span class="font-semibold">Forma:</span> <span id="forma"></span></p>
+          <p class="text-purple-700 text-sm mb-1"><span class="font-semibold">Lote:</span> <span id="lote"></span></p>
+          <p class="text-purple-700 text-sm mb-1"><span class="font-semibold">Precio:</span> <span id="precio"></span></p>
+          <p class="text-purple-700 text-sm"><span class="font-semibold">Ubicación:</span> <span id="ubicacion"></span></p>
+          <!-- Botón centrado para agregar al carrito -->
+          <div class="flex justify-center mt-4">
+            <button class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-purple-400" data-id="">
+              Agregar al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Sección Derecha: Mapa de geolocalización -->
+      <div class="w-full h-full">
+        <div class="border-2 border-purple-300 bg-pink-100 w-full h-80 flex items-center justify-center">
+          <div id="map" class="w-full h-full"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="index.js"></script>
+  <script src="../components/nav.js"></script>
+</body>
+</html>

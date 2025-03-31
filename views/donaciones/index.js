@@ -3,10 +3,6 @@ const productos = [
     { nombre: "Pertuzumab",     concentracion: "420 mg/14 mL",   forma: "Solución inyectable", lote: "PZ202402", imagen: "img/pertuzumab.png" },
     { nombre: "Paclitaxel",     concentracion: "100 mg/16.7 mL", forma: "Solución inyectable", lote: "PT202403", imagen: "img/paclitaxel.png" },
     { nombre: "Docetaxel",      concentracion: "80 mg/4 mL",     forma: "Solución inyectable", lote: "DT202404", imagen: "img/docetaxel.png" },
-    { nombre: "Doxorrubicina",  concentracion: "50 mg/25 mL",    forma: "Solución inyectable", lote: "DL202405", imagen: "img/doxorrubicina.png" },
-    { nombre: "Capecitabina",   concentracion: "500 mg",         forma: "Tableta recubierta",  lote: "CP202406", imagen: "img/capecitabina.png" },
-    { nombre: "Tamoxifeno",     concentracion: "20 mg",          forma: "Tableta recubierta",  lote: "TX202407", imagen: "img/tamoxifeno.png" },
-    { nombre: "Letrozol",       concentracion: "2.5 mg",         forma: "Tableta recubierta",  lote: "LZ202408", imagen: "img/letrozol.png" },
   ];
 
 // Rutas configurables: cambia estos valores por las URL que desees

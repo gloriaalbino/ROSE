@@ -4,26 +4,11 @@ const app = express()
 const mongoose = require('mongoose')
 const path = require('path')
 const userRouter = require('./controllers/users')
-/*const multer = require('multer')
-const cors = require('cors')
-const sharp = require('sharp')
-const PORT = 4000
+const productosRouter = require('./controllers/productos');
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb)=>{
-        cb(null, './uploads')
-    },
-    filename: (req, file, cb)=> {
-        const ext = file.originalname.split('.').pop()
-        cb(null, `${Date.now()}.${ext}`)
-    }
-})
-
-const upload = multer.MulterError({ storage })
-
-app.post('/upload', upload.single('file'), (req, res)=>{
-    res.send({ data: 'Imagen cargada' })
-})*/
+// Middleware para parsear JSON
+app.use(express.json()); //maneja las solicitudes
+app.use('api/productos', productosRouter); //conecta las rutas de productos
 
 //Conexion a la BD 
     try{
@@ -44,18 +29,23 @@ app.use('/donar', express.static(path.resolve('views', 'donar')))
 app.use('/dashboard', express.static(path.resolve('views', 'dashboard')))
 app.use('/admin', express.static(path.resolve('views', 'admin')))
 app.use('/perfil', express.static(path.resolve('views', 'perfil')))
-app.use('/empresa', express.static(path.resolve('views', 'empresa')))
+app.use('/producto', express.static(path.resolve('views', 'producto')))
 app.use('/canje', express.static(path.resolve('views', 'canje')))
 app.use('/ficha', express.static(path.resolve('views', 'ficha')))
 app.use('/img', express.static(path.resolve('img')))
 app.use('/icons', express.static(path.resolve('icons')))
 app.use('/components', express.static(path.resolve('views', 'components')))
+app.use('/controllers', express.static(path.resolve('controllers')))
 
 //Importante
 app.use(express.json());
+//app.producto(express.json());
 //app.use(cors())
+
 //Rutas de backend
 app.use('/api/users',userRouter);
+app.use('/api/productos',productosRouter);
+
 //app.use()
 module.exports = app
 

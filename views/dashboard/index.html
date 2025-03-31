@@ -30,44 +30,25 @@
     </nav>
 
          <!-- Imagen responsiva con animación, justo debajo del navbar -->
-        <div class="w-full max-w-7xl mx-auto mt-20 px-4">
+        <div class="items-center text-center w-full max-w-7xl mx-auto mt-20 px-4">
             <img src="img/imgusuario.png" alt="Imagen destacada" class="w-full h-auto rounded-lg shadow-lg animate-fadeIn">
-            <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-2xl text-center mt-6">
-                <h1 class="text-3xl font-bold text-purple-700">BIENVENID@ A ROSE</h1>
-                <h3 class="text-2xl font-bold text-pink-500">El lugar que te enlaza con tus ganas de vivir</h3>
-            </div>
+                <h1 class="text-3xl font-bold text-purple-700">BIENVENIDA A ROSE</h1>
+                <h4 class="text-2xl font-bold text-pink-500">El lugar que te enlaza con tus ganas de vivir</h4>
         </div>
-    
-   
-    
-    <!-- Resto de contenido -->
-    
-    <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-2xl mt-6">
-      <h2 class="text-xl font-semibold text-purple-700 text-center">Opciones de Productos Oncológicos</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 1" class="w-full rounded-md">
-          <p class="mt-2 text-purple-800 font-semibold">Producto 1</p>
-        </div>
-        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 2" class="w-full rounded-md">
-          <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 2</p>
-        </div>
-        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 3" class="w-full rounded-md">
-          <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 3</p>
-        </div>
-        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 4" class="w-full rounded-md">
-          <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 4</p>
-        </div>
-        <div class="bg-pink-200 p-4 rounded-lg shadow text-center">
-          <img src="https://via.placeholder.com/100" alt="Producto Oncológico 5" class="w-full rounded-md">
-          <p class="mt-2 text-purple-800 font-semibold">Producto Oncológico 5</p>
-        </div>
-      </div>
+    <br>
+    <br>
+    <!-- Contenido principal (con tarjetas que abren modales) -->
+     <h2 class="text-3xl font-bold text-purple-700 mb-8 text-center">Productos disponibles en venta</h2>
+    <!-- Lista de productos-->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12" id="productos-container">
+        <!-- Aquí se inyectan o listan tus productos con JS -->
     </div>
     
+    <!-- Footer -->
+  <footer class="w-full bg-purple-700 text-white py-4 text-center">
+    <p class="text-sm">&copy; 2025 ROSE. Elaborado por: Gloria González.Todos los derechos reservados.</p>
+  </footer>
+  
     <script src="index.js"></script>
     <script src="../components/nav.js"></script>
   </body>

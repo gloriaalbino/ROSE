@@ -50,7 +50,4 @@ if(window.location.pathname === '/usuario/'){
     }else if(window.location.pathname === '/admin/'){
     //Crear la pagina de navegacion de inicio de sesion
         crearDashAdmin()
-    }else if(window.location.pathname === '/empresa/'){
-    //Crear la pagina de navegacion de registro 
-        crearDashEmpresa()
     }

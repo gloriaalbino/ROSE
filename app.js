@@ -6,6 +6,7 @@ const path = require('path')
 const userRouter = require('./controllers/users')
 const productosRouter = require('./controllers/productos');
 const perfilRouter = require('./controllers/perfil');
+const canjeRouter = require('./controllers/canje');
 
 // Middleware para parsear JSON
 app.use(express.json()); //maneja las solicitudes
@@ -47,6 +48,7 @@ app.use(express.json());
 app.use('/api/users',userRouter);
 app.use('/api/productos',productosRouter);
 app.use('/api/perfil', perfilRouter);
+app.use('/api/medicamentos', canjeRouter);
 
 //app.use()
 module.exports = app

@@ -71,6 +71,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.querySelector('#login-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+  
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+  
+    try {
+      const response = await axios.post('/api/auth/login', { email, password });
+      const { token } = response.data;
+  
+      // Guardar el token en localStorage
+      localStorage.setItem('token', token);
+  
+      alert('Inicio de sesión exitoso');
+      window.location.href = '/perfil.html'; // Redirigir al perfil
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      alert('Error al iniciar sesión. Por favor, verifica tus credenciales.');
+    }
+  });
+
+  const token = localStorage.getItem('token');
+
+    axios.get('/api/perfil', {
+    headers: {
+        Authorization: token,
+    },
+    })
+    .then(response => {
+        console.log('Datos del perfil:', response.data);
+    })
+    .catch(error => {
+        console.error('Error al acceder al perfil:', error);
+    });
+
+//cerrar sesion
+document.querySelector('#logout-button').addEventListener('click', () => {
+  localStorage.removeItem('token');
+  alert('Sesión cerrada');
+  window.location.href = '/login.html'; // Redirigir al inicio de sesión
+});
+
 
 
 

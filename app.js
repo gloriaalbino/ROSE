@@ -9,6 +9,8 @@ const perfilRouter = require('./controllers/perfil');
 const canjeRouter = require('./controllers/canje');
 const donacionRouter = require('./controllers/donacion');
 const donarRouter = require('./controllers/donar');
+const authRouter = require('./controllers/auth');
+const verificarToken = require('./middleware/auth');
 
 // Middleware para parsear JSON
 app.use(express.json()); //maneja las solicitudes
@@ -53,6 +55,12 @@ app.use('/api/perfil', perfilRouter);
 app.use('/api/medicamentos', canjeRouter);
 app.use('/api/donaciones', donacionRouter);
 app.use('/api/donar', donarRouter);
+app.use('/api/auth', authRouter);
+
+// Ruta protegida de ejemplo
+app.get('/api/perfil', verificarToken, (req, res) => {
+    res.status(200).json({ message: 'Acceso autorizado al perfil del usuario.' });
+  });
 
 //app.use()
 module.exports = app

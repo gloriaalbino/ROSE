@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     spinner.style.display = "none";
     form.appendChild(spinner);
+    
   
     // Evento de envío del formulario
     form.addEventListener("submit", async (event) => {
